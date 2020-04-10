@@ -1,6 +1,11 @@
 {{ define "header" }}
- {{ partial "main/header.html" . }}
+  {{ partial "main/header.html" . }}
 {{ end }}
+
 {{ define "main" }}
-  {{ partial "main/single.html" . }}
+  {{ if .Params.slide }}
+    {{ partial "reveal-hugo/slides" (slice .Page) }}
+  {{ else }}
+    {{ partial "main/single.html" . }}
+  {{ end }}
 {{ end }}
