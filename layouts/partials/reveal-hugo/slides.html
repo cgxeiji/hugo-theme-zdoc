@@ -13,6 +13,7 @@
     {{- $content := replaceRE `(<code class="language-\w+){(\S+)}(">)` `$1" data-line-numbers="$2">` $content -}}
     {{- $content := replace $content "<h2" "SB<h1" -}}
     {{- $content := replace $content "<h3" "SC<h2" -}}
+    {{- $content := replace $content "<h4" "SC<h3" -}}
 
   {{ if .Title }}
     {{ if not .Params.hide_title }}
